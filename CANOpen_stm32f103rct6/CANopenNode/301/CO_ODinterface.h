@@ -242,25 +242,27 @@ typedef struct {
  * Extension of OD object, which can optionally be specified by application in initialization phase with @ref
  * OD_extension_init() function.
  */
-typedef struct {
-    /** Object on which read and write will operate, part of @ref OD_stream_t */
-    void* object;
-    /** Application specified read function pointer. If NULL, then read will be disabled. @ref OD_readOriginal can be
-     * used here to keep the original read function. For function description see @ref OD_IO_t. */
-    ODR_t (*read)(OD_stream_t* stream, void* buf, OD_size_t count, OD_size_t* countRead);
-    /** Application specified write function pointer. If NULL, then write will be disabled. @ref OD_writeOriginal can be
-     * used here to keep the original write function. For function description see @ref OD_IO_t. */
-    ODR_t (*write)(OD_stream_t* stream, const void* buf, OD_size_t count, OD_size_t* countWritten);
-#if OD_FLAGS_PDO_SIZE > 0
-    /** PDO flags bit-field provides one bit for each OD variable, which exist inside OD object at specific sub index.
-     * If application clears that bit, and OD variable is mapped to an event driven TPDO, then TPDO will be sent.
-     *
-     * @ref OD_FLAGS_PDO_SIZE can have a value from 0 to 32 bytes, which corresponds to 0 to 256 available bits. If, for
-     * example, @ref OD_FLAGS_PDO_SIZE has value 4, then OD variables with sub index up to 31 will have the TPDO
-     * requesting functionality. See also @ref OD_requestTPDO and @ref OD_TPDOtransmitted. */
-    uint8_t flagsPDO[OD_FLAGS_PDO_SIZE];
-#endif
-} OD_extension_t;
+//typedef struct {
+//    /** Object on which read and write will operate, part of @ref OD_stream_t */
+//    void* object;
+//    /** Application specified read function pointer. If NULL, then read will be disabled. @ref OD_readOriginal can be
+//     * used here to keep the original read function. For function description see @ref OD_IO_t. */
+//    ODR_t (*read)(OD_stream_t* stream, void* buf, OD_size_t count, OD_size_t* countRead);
+//    /** Application specified write function pointer. If NULL, then write will be disabled. @ref OD_writeOriginal can be
+//     * used here to keep the original write function. For function description see @ref OD_IO_t. */
+//    ODR_t (*write)(OD_stream_t* stream, const void* buf, OD_size_t count, OD_size_t* countWritten);
+//#if OD_FLAGS_PDO_SIZE > 0
+//    /** PDO flags bit-field provides one bit for each OD variable, which exist inside OD object at specific sub index.
+//     * If application clears that bit, and OD variable is mapped to an event driven TPDO, then TPDO will be sent.
+//     *
+//     * @ref OD_FLAGS_PDO_SIZE can have a value from 0 to 32 bytes, which corresponds to 0 to 256 available bits. If, for
+//     * example, @ref OD_FLAGS_PDO_SIZE has value 4, then OD variables with sub index up to 31 will have the TPDO
+//     * requesting functionality. See also @ref OD_requestTPDO and @ref OD_TPDOtransmitted. */
+//    uint8_t flagsPDO[OD_FLAGS_PDO_SIZE];
+//#endif
+//} OD_extension_t;
+// 改为前向声明
+typedef struct OD_extension_t OD_extension_t;
 
 /**
  * Object Dictionary entry for one OD object.
@@ -394,7 +396,7 @@ OD_requestTPDO(OD_entry_t* entry, uint8_t subIndex) {
     if ((entry != NULL) && (entry->extension != NULL) && (subIndex < (OD_FLAGS_PDO_SIZE * 8U))) {
         /* clear subIndex-th bit */
         uint8_t mask = ~(1U << (subIndex & 0x07U));
-        entry->extension->flagsPDO[subIndex >> 3] &= mask;
+        ((OD_extension_t*)entry->extension)->flagsPDO[subIndex >> 3] &= mask;
     }
 #endif
 }
@@ -415,7 +417,7 @@ OD_TPDOtransmitted(OD_entry_t* entry, uint8_t subIndex) {
     if ((entry != NULL) && (entry->extension != NULL) && (subIndex < (OD_FLAGS_PDO_SIZE * 8U))) {
         /* return true, if subIndex-th bit is set */
         uint8_t mask = 1U << (subIndex & 0x07U);
-        if ((entry->extension->flagsPDO[subIndex >> 3] & mask) != 0U) {
+        if ((((OD_extension_t*)entry->extension)->flagsPDO[subIndex >> 3] & mask) != 0U) {
             return true;
         }
     }

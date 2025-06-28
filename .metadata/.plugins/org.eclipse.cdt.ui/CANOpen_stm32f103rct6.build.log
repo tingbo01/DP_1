@@ -1,4 +1,4 @@
-06:02:30 **** Incremental Build of configuration Debug for project CANOpen_stm32f103rct6 ****
+07:16:00 **** 构建 of configuration Debug for project CANOpen_stm32f103rct6 ****
 make -j16 all 
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.o"
@@ -20,40 +20,61 @@ arm-none-eabi-gcc "../Core/Src/globals.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG
 arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/gpio.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
-In file included from ../Core/Inc/globals.h:11,
-                 from ../Core/Src/globals.c:8:
-../Core/Src/globals.c: In function 'getODEntry':
-../CANopenNode/objectDictionary.h:25:24: error: invalid application of 'sizeof' to incomplete type 'const OD_entry_t[]'
-   25 | #define OD_SIZE (sizeof(OD) / sizeof(OD[0]))
-      |                        ^
-../Core/Src/globals.c:12:30: note: in expansion of macro 'OD_SIZE'
-   12 |     for (uint16_t i = 0; i < OD_SIZE; i++) {  // 使用全局变量OD_SIZE
-      |                              ^~~~~~~
-make: *** [Core/Src/subdir.mk:46: Core/Src/globals.o] Error 1
-make: *** Waiting for unfinished jobs....
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
 In file included from ../CANopenNode/CANopen.h:26,
                  from ../CANopenNode_STM32/CO_app_STM32.h:11,
                  from ../Core/Src/main.c:27:
-../CANopenNode/301/CO_ODinterface.h:263:3: error: conflicting types for 'OD_extension_t'; have 'struct <anonymous>'
-  263 | } OD_extension_t;
-      |   ^~~~~~~~~~~~~~
-In file included from ../CANopenNode/301/CO_driver.h:26,
-                 from ../CANopenNode/CANopen.h:25:
-../CANopenNode/301/CO_config.h:798:3: note: previous declaration of 'OD_extension_t' with type 'OD_extension_t'
-  798 | } OD_extension_t;
-      |   ^~~~~~~~~~~~~~
 ../CANopenNode/301/CO_ODinterface.h: In function 'OD_requestTPDO':
-../CANopenNode/301/CO_ODinterface.h:397:25: warning: dereferencing 'void *' pointer
-  397 |         entry->extension->flagsPDO[subIndex >> 3] &= mask;
-      |                         ^~
-../CANopenNode/301/CO_ODinterface.h:397:25: error: request for member 'flagsPDO' in something not a structure or union
+../CANopenNode/301/CO_ODinterface.h:399:44: error: invalid use of incomplete typedef 'OD_extension_t'
+  399 |         ((OD_extension_t*)entry->extension)->flagsPDO[subIndex >> 3] &= mask;
+      |                                            ^~
 ../CANopenNode/301/CO_ODinterface.h: In function 'OD_TPDOtransmitted':
-../CANopenNode/301/CO_ODinterface.h:418:30: warning: dereferencing 'void *' pointer
-  418 |         if ((entry->extension->flagsPDO[subIndex >> 3] & mask) != 0U) {
-      |                              ^~
-../CANopenNode/301/CO_ODinterface.h:418:30: error: request for member 'flagsPDO' in something not a structure or union
+../CANopenNode/301/CO_ODinterface.h:420:49: error: invalid use of incomplete typedef 'OD_extension_t'
+  420 |         if ((((OD_extension_t*)entry->extension)->flagsPDO[subIndex >> 3] & mask) != 0U) {
+      |                                                 ^~
+In file included from ../CANopenNode/301/CO_NMT_Heartbeat.h:26,
+                 from ../CANopenNode/CANopen.h:27:
+../CANopenNode/301/CO_Emergency.h: At top level:
+../CANopenNode/301/CO_Emergency.h:285:20: error: field 'OD_1014_extension' has incomplete type
+  285 |     OD_extension_t OD_1014_extension; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~
+../CANopenNode/301/CO_Emergency.h:298:20: error: field 'OD_1003_extension' has incomplete type
+  298 |     OD_extension_t OD_1003_extension; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~
+../CANopenNode/301/CO_NMT_Heartbeat.h:145:20: error: field 'OD_1017_extension' has incomplete type
+  145 |     OD_extension_t OD_1017_extension; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~
+In file included from ../CANopenNode/CANopen.h:28:
+../CANopenNode/301/CO_HBconsumer.h:122:20: error: field 'OD_1016_extension' has incomplete type
+  122 |     OD_extension_t OD_1016_extension; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~
+In file included from ../CANopenNode/CANopen.h:31:
+../CANopenNode/301/CO_SDOserver.h:381:20: error: field 'OD_1200_extension' has incomplete type
+  381 |     OD_extension_t OD_1200_extension; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~
+In file included from ../CANopenNode/CANopen.h:33:
+../CANopenNode/301/CO_SYNC.h:92:20: error: field 'OD_1005_extension' has incomplete type
+   92 |     OD_extension_t OD_1005_extension; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~
+../CANopenNode/301/CO_SYNC.h:97:20: error: field 'OD_1019_extension' has incomplete type
+   97 |     OD_extension_t OD_1019_extension; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~
+In file included from ../CANopenNode/CANopen.h:34:
+../CANopenNode/301/CO_PDO.h:185:20: error: field 'OD_communicationParam_ext' has incomplete type
+  185 |     OD_extension_t OD_communicationParam_ext; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+../CANopenNode/301/CO_PDO.h:186:20: error: field 'OD_mappingParam_extension' has incomplete type
+  186 |     OD_extension_t OD_mappingParam_extension; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../CANopenNode/CANopen.h:35:
+../CANopenNode/301/CO_TIME.h:88:20: error: field 'OD_1012_extension' has incomplete type
+   88 |     OD_extension_t OD_1012_extension; /**< Extension for OD object */
+      |                    ^~~~~~~~~~~~~~~~~
 make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
 "make -j16 all" terminated with exit code 2. Build might be incomplete.
 
-06:02:35 Build Failed. 7 errors, 2 warnings. (took 5s.143ms)
+07:16:05 Build Failed. 14 errors, 0 warnings. (took 4s.691ms)
 

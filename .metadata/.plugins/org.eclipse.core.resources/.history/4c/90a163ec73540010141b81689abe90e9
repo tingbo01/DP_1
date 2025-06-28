@@ -1,0 +1,32 @@
+/*
+ * objectDictionary.c
+ *
+ *  Created on: Jun 28, 2025
+ *      Author: 刘廷波
+ */
+
+#include "objectDictionary.h"
+#include "301/CO_driver.h"
+
+/* 对象字典条目数量 */
+const uint16_t OD_ENTRY_COUNT = 10;  // 根据实际条目数调整
+
+/* 对象字典定义 */
+const OD_entry_t OD[OD_ENTRY_COUNT] = {
+    /* 0x60xx: 电机控制对象 */
+    OD_ENTRY(0x6040, 0x00, OD_accessReadWrite, OD_TYPE_UNSIGNED16, 0x6060), /* 控制字 */
+    OD_ENTRY(0x6060, 0x00, OD_accessReadWrite, OD_TYPE_INTEGER8, 0x08),      /* 运行模式：速度模式 */
+    OD_ENTRY(0x6064, 0x00, OD_accessReadOnly, OD_TYPE_INTEGER32, 0),        /* 实际速度 */
+    OD_ENTRY(0x606C, 0x00, OD_accessReadWrite, OD_TYPE_INTEGER32, 0),       /* 目标速度 */
+    OD_ENTRY(0x6077, 0x00, OD_accessReadWrite, OD_TYPE_UNSIGNED16, 1000),   /* 最大转矩限制 */
+
+    /* 0x30xx: 自定义差速控制对象 */
+    OD_ENTRY(0x3000, 0x01, OD_accessReadWrite, OD_TYPE_INTEGER32, 0),        /* 线速度 (0.001 m/s) */
+    OD_ENTRY(0x3000, 0x02, OD_accessReadWrite, OD_TYPE_INTEGER32, 0),        /* 角速度 (0.001 rad/s) */
+
+    // ...其他条目...
+
+    /* PDO映射配置示例 */
+    OD_ENTRY(0x1600, 0x01, OD_accessReadWrite, OD_TYPE_UNSIGNED32, 0x60400010), // RPDO1映射控制字
+    OD_ENTRY(0x1600, 0x02, OD_accessReadWrite, OD_TYPE_UNSIGNED32, 0x606C0020)  // RPDO1映射目标速度
+};

@@ -793,9 +793,9 @@ extern "C" {
 #endif /* CO_CONFIG_FLAGS_H */
 
 // 定义扩展结构体
-typedef struct {
-    uint8_t flagsPDO[8]; // 实际大小取决于OD_FLAGS_PDO_SIZE
-} OD_extension_t;
+//typedef struct {
+//    uint8_t flagsPDO[8]; // 实际大小取决于OD_FLAGS_PDO_SIZE
+//} OD_extension_t;
 
 
 /* 对象字典条目类型定义 */
