@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../CANopenNode/CANopen.c 
+../CANopenNode/CANopen.c \
+../CANopenNode/objectDictionary.c 
 
 OBJS += \
-./CANopenNode/CANopen.o 
+./CANopenNode/CANopen.o \
+./CANopenNode/objectDictionary.o 
 
 C_DEPS += \
-./CANopenNode/CANopen.d 
+./CANopenNode/CANopen.d \
+./CANopenNode/objectDictionary.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ CANopenNode/%.o CANopenNode/%.su CANopenNode/%.cyclo: ../CANopenNode/%.c CANopen
 clean: clean-CANopenNode
 
 clean-CANopenNode:
-	-$(RM) ./CANopenNode/CANopen.cyclo ./CANopenNode/CANopen.d ./CANopenNode/CANopen.o ./CANopenNode/CANopen.su
+	-$(RM) ./CANopenNode/CANopen.cyclo ./CANopenNode/CANopen.d ./CANopenNode/CANopen.o ./CANopenNode/CANopen.su ./CANopenNode/objectDictionary.cyclo ./CANopenNode/objectDictionary.d ./CANopenNode/objectDictionary.o ./CANopenNode/objectDictionary.su
 
 .PHONY: clean-CANopenNode
 

@@ -25,7 +25,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "CO_app_STM32.h"
-#include "globals.h"  // 确保包含全局声明
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
