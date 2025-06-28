@@ -15,7 +15,7 @@
 #ifndef OBJECT_DICTIONARY_H
 #define OBJECT_DICTIONARY_H
 
-#include "301/CO_driver.h"  // 包含CANopen驱动基础定义
+#include "CO_driver.h"  // 包含CANopen驱动基础定义
 
 #ifdef __cplusplus
 extern "C" {

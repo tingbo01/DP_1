@@ -800,13 +800,13 @@ extern "C" {
 //    uint8_t     dataType;    // OD_TYPE_UNSIGNED16等
 //    uint32_t    defaultValue;
 //} OD_entry_t;
-//typedef struct {
-//    uint16_t index;
-//    uint8_t subIndex;
-//    uint8_t attr;
-//    void *pData;
-//    uint8_t dataLength;
-//} OD_entry_t;
+typedef struct {
+    uint16_t index;
+    uint8_t subIndex;
+    uint8_t attr;
+    void *pData;
+    uint8_t dataLength;
+} OD_entry_t;
 /* 访问权限枚举 */
 typedef enum {
     OD_accessReadOnly = 0x01,

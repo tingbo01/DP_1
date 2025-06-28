@@ -793,13 +793,13 @@ extern "C" {
 
 
 /* 对象字典条目类型定义 */
-//typedef struct {
-//    uint16_t    index;
-//    uint8_t     subIndex;
-//    uint8_t     accessType;  // OD_accessReadWrite等
-//    uint8_t     dataType;    // OD_TYPE_UNSIGNED16等
-//    uint32_t    defaultValue;
-//} OD_entry_t;
+typedef struct {
+    uint16_t    index;
+    uint8_t     subIndex;
+    uint8_t     accessType;  // OD_accessReadWrite等
+    uint8_t     dataType;    // OD_TYPE_UNSIGNED16等
+    uint32_t    defaultValue;
+} OD_entry_t;
 //typedef struct {
 //    uint16_t index;
 //    uint8_t subIndex;

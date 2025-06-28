@@ -6,7 +6,7 @@
  */
 
 #include "objectDictionary.h"
-#include "301/CO_driver.h"
+#include "CO_driver.h"
 
 /* 对象字典条目数量 */
 const uint16_t OD_ENTRY_COUNT = 10;  // 根据实际条目数调整
