@@ -269,14 +269,14 @@ typedef struct {
  * and subEntriesCount), pointer to odObject with additional information about var, array or record entry and pointer to
  * extension, configurable by application.
  */
-typedef struct {
-    uint16_t index;            /**< Object Dictionary index */
-    uint8_t subEntriesCount;   /**< Number of all sub-entries, including sub-entry at sub-index 0 */
-    uint8_t odObjectType;      /**< Type of the odObject, indicated by @ref OD_objectTypes_t enumerator. */
-    CO_PROGMEM void* odObject; /**< OD object of type indicated by odObjectType, from which @ref OD_getSub() fetches the
-                                  information */
-    OD_extension_t* extension; /**< Extension to OD, specified by application */
-} OD_entry_t;
+//typedef struct {
+//    uint16_t index;            /**< Object Dictionary index */
+//    uint8_t subEntriesCount;   /**< Number of all sub-entries, including sub-entry at sub-index 0 */
+//    uint8_t odObjectType;      /**< Type of the odObject, indicated by @ref OD_objectTypes_t enumerator. */
+//    CO_PROGMEM void* odObject; /**< OD object of type indicated by odObjectType, from which @ref OD_getSub() fetches the
+//                                  information */
+//    OD_extension_t* extension; /**< Extension to OD, specified by application */
+//} OD_entry_t;
 
 /**
  * Object Dictionary

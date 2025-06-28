@@ -17,6 +17,15 @@
 
 #include "301/CO_driver.h"  // 包含CANopen驱动基础定义
 
+extern const OD_entry_t OD[];
+extern const uint16_t OD_SIZE; // 声明外部变量
+
+// 添加OD_SIZE定义
+#ifndef OD_SIZE
+#define OD_SIZE (sizeof(OD) / sizeof(OD[0]))
+#endif
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif

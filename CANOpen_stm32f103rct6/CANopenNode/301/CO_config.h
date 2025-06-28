@@ -20,6 +20,7 @@
 
 #ifndef CO_CONFIG_FLAGS_H
 #define CO_CONFIG_FLAGS_H
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -791,6 +792,11 @@ extern "C" {
 
 #endif /* CO_CONFIG_FLAGS_H */
 
+// 定义扩展结构体
+typedef struct {
+    uint8_t flagsPDO[8]; // 实际大小取决于OD_FLAGS_PDO_SIZE
+} OD_extension_t;
+
 
 /* 对象字典条目类型定义 */
 //typedef struct {
@@ -800,13 +806,14 @@ extern "C" {
 //    uint8_t     dataType;    // OD_TYPE_UNSIGNED16等
 //    uint32_t    defaultValue;
 //} OD_entry_t;
-//typedef struct {
-//    uint16_t index;
-//    uint8_t subIndex;
-//    uint8_t attr;
-//    void *pData;
-//    uint8_t dataLength;
-//} OD_entry_t;
+typedef struct {
+    uint16_t index;
+    uint8_t subIndex;
+    uint8_t attr;
+    void *pData;
+    uint8_t dataLength;
+    void *extension;  // 添加extension成员
+} OD_entry_t;
 /* 访问权限枚举 */
 typedef enum {
     OD_accessReadOnly = 0x01,

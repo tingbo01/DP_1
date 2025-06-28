@@ -1,5 +1,5 @@
 ################################################################################
-# Automatically-generated file. Do not edit!
+# 自动生成的文件。不要编辑！
 # Toolchain: GNU Tools for STM32 (13.3.rel1)
 ################################################################################
 
@@ -65,34 +65,34 @@ OBJCOPY_HEX += \
 CANOpen_stm32f103rct6.hex \
 
 
-# All Target
+# 所有目标
 all: main-build
 
-# Main-build Target
+# 主构建目标
 main-build: CANOpen_stm32f103rct6.elf secondary-outputs
 
-# Tool invocations
+# 工具调用
 CANOpen_stm32f103rct6.elf CANOpen_stm32f103rct6.map: $(OBJS) $(USER_OBJS) D:\CANopen_stm32\CANOpen_stm32f103rct6\STM32F103RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "CANOpen_stm32f103rct6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\CANopen_stm32\CANOpen_stm32f103rct6\STM32F103RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CANOpen_stm32f103rct6.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-	@echo 'Finished building target: $@'
+	@echo '已结束构建目标： $@'
 	@echo ' '
 
 default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-size  $(EXECUTABLES)
-	@echo 'Finished building: $@'
+	@echo '已结束构建： $@'
 	@echo ' '
 
 CANOpen_stm32f103rct6.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "CANOpen_stm32f103rct6.list"
-	@echo 'Finished building: $@'
+	@echo '已结束构建： $@'
 	@echo ' '
 
 CANOpen_stm32f103rct6.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "CANOpen_stm32f103rct6.hex"
-	@echo 'Finished building: $@'
+	@echo '已结束构建： $@'
 	@echo ' '
 
-# Other Targets
+# 其他目标
 clean:
 	-$(RM) CANOpen_stm32f103rct6.elf CANOpen_stm32f103rct6.hex CANOpen_stm32f103rct6.list CANOpen_stm32f103rct6.map default.size.stdout
 	-@echo ' '

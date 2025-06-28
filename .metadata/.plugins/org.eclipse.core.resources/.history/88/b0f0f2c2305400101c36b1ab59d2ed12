@@ -1,0 +1,20 @@
+/*
+ * globals.c
+ *
+ *  Created on: Jun 28, 2025
+ *      Author: 刘廷波
+ */
+
+#include "globals.h"
+
+#include "objectDictionary.h"  // 确保包含这个头文件
+
+// 更新函数实现
+OD_entry_t* getODEntry(uint16_t index, uint8_t subIndex) {
+    for (uint16_t i = 0; i < OD_SIZE; i++) {
+        if (OD[i].index == index && OD[i].subIndex == subIndex) {
+            return (OD_entry_t*)&OD[i];
+        }
+    }
+    return NULL;
+}

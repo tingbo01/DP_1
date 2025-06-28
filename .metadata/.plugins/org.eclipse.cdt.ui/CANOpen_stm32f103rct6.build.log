@@ -1,4 +1,4 @@
-22:10:21 **** 构建 of configuration Debug for project CANOpen_stm32f103rct6 ****
+06:02:30 **** Incremental Build of configuration Debug for project CANOpen_stm32f103rct6 ****
 make -j16 all 
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.o"
@@ -20,54 +20,40 @@ arm-none-eabi-gcc "../Core/Src/globals.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG
 arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/gpio.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
-arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xE -c -I../Core/Inc -I../CANopenNode/301 -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../CANopenNode -I../CANopenNode_STM32 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
 In file included from ../Core/Inc/globals.h:11,
                  from ../Core/Src/globals.c:8:
-../CANopenNode/objectDictionary.h:42:14: error: unknown type name 'OD_entry_t'
-   42 | extern const OD_entry_t OD[];
-      |              ^~~~~~~~~~
-../Core/Inc/globals.h:14: warning: "OD_ENTRY" redefined
-   14 | #define OD_ENTRY(index, subIndex) \
-      | 
-In file included from ../CANopenNode/301/CO_driver.h:26,
-                 from ../CANopenNode/objectDictionary.h:18:
-../CANopenNode/301/CO_config.h:826: note: this is the location of the previous definition
-  826 | #define OD_ENTRY(index, subIndex, access, type, defaultValue) \
-      | 
-../Core/Inc/globals.h:18:1: error: unknown type name 'OD_entry_t'
-   18 | OD_entry_t* getODEntry(uint16_t index, uint8_t subIndex);
-      | ^~~~~~~~~~
-../Core/Src/globals.c:11:1: error: unknown type name 'OD_entry_t'
-   11 | OD_entry_t* getODEntry(uint16_t index, uint8_t subIndex) {
-      | ^~~~~~~~~~
 ../Core/Src/globals.c: In function 'getODEntry':
-../Core/Src/globals.c:13:18: error: request for member 'index' in something not a structure or union
-   13 |         if (OD[i].index == index && OD[i].subIndex == subIndex) {
-      |                  ^
-../Core/Src/globals.c:13:42: error: request for member 'subIndex' in something not a structure or union
-   13 |         if (OD[i].index == index && OD[i].subIndex == subIndex) {
-      |                                          ^
-../Core/Src/globals.c:14:21: error: 'OD_entry_t' undeclared (first use in this function)
-   14 |             return (OD_entry_t*)&OD[i];
-      |                     ^~~~~~~~~~
-../Core/Src/globals.c:14:21: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/globals.c:14:32: error: expected expression before ')' token
-   14 |             return (OD_entry_t*)&OD[i];
-      |                                ^
+../CANopenNode/objectDictionary.h:25:24: error: invalid application of 'sizeof' to incomplete type 'const OD_entry_t[]'
+   25 | #define OD_SIZE (sizeof(OD) / sizeof(OD[0]))
+      |                        ^
+../Core/Src/globals.c:12:30: note: in expansion of macro 'OD_SIZE'
+   12 |     for (uint16_t i = 0; i < OD_SIZE; i++) {  // 使用全局变量OD_SIZE
+      |                              ^~~~~~~
 make: *** [Core/Src/subdir.mk:46: Core/Src/globals.o] Error 1
 make: *** Waiting for unfinished jobs....
-In file included from ../Core/Src/main.c:28:
-../Core/Inc/globals.h:14: warning: "OD_ENTRY" redefined
-   14 | #define OD_ENTRY(index, subIndex) \
-      | 
-In file included from ../CANopenNode/301/CO_driver.h:26,
-                 from ../CANopenNode/CANopen.h:25,
+In file included from ../CANopenNode/CANopen.h:26,
                  from ../CANopenNode_STM32/CO_app_STM32.h:11,
                  from ../Core/Src/main.c:27:
-../CANopenNode/301/CO_config.h:826: note: this is the location of the previous definition
-  826 | #define OD_ENTRY(index, subIndex, access, type, defaultValue) \
-      | 
+../CANopenNode/301/CO_ODinterface.h:263:3: error: conflicting types for 'OD_extension_t'; have 'struct <anonymous>'
+  263 | } OD_extension_t;
+      |   ^~~~~~~~~~~~~~
+In file included from ../CANopenNode/301/CO_driver.h:26,
+                 from ../CANopenNode/CANopen.h:25:
+../CANopenNode/301/CO_config.h:798:3: note: previous declaration of 'OD_extension_t' with type 'OD_extension_t'
+  798 | } OD_extension_t;
+      |   ^~~~~~~~~~~~~~
+../CANopenNode/301/CO_ODinterface.h: In function 'OD_requestTPDO':
+../CANopenNode/301/CO_ODinterface.h:397:25: warning: dereferencing 'void *' pointer
+  397 |         entry->extension->flagsPDO[subIndex >> 3] &= mask;
+      |                         ^~
+../CANopenNode/301/CO_ODinterface.h:397:25: error: request for member 'flagsPDO' in something not a structure or union
+../CANopenNode/301/CO_ODinterface.h: In function 'OD_TPDOtransmitted':
+../CANopenNode/301/CO_ODinterface.h:418:30: warning: dereferencing 'void *' pointer
+  418 |         if ((entry->extension->flagsPDO[subIndex >> 3] & mask) != 0U) {
+      |                              ^~
+../CANopenNode/301/CO_ODinterface.h:418:30: error: request for member 'flagsPDO' in something not a structure or union
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
 "make -j16 all" terminated with exit code 2. Build might be incomplete.
 
-22:10:26 Build Failed. 9 errors, 2 warnings. (took 4s.380ms)
+06:02:35 Build Failed. 7 errors, 2 warnings. (took 5s.143ms)
 
