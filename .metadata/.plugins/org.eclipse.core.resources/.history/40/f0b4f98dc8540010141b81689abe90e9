@@ -26,9 +26,6 @@
 /* USER CODE BEGIN Includes */
 #include "CO_app_STM32.h"
 #include "globals.h"  // 确保包含全局声明
-#include "CO_driver.h"       // CANopen驱动头文件
-#include "CO_ODinterface.h"  // 对象字典接口
-#include "CO_Emergency.h"    // 紧急对象
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

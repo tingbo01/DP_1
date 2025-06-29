@@ -17,29 +17,11 @@
  * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and limitations under the License.
  */
-#if !defined(OD_EXTENSION_DEFINED)
-#define OD_EXTENSION_DEFINED
-
-typedef struct {
-    uint8_t* flagsPDO;       // PDO传输标志
-    uint8_t* mapping;        // PDO映射指针
-    uint16_t mappingSize;    // 映射大小
-    /* 根据硬件需求添加 */
-    uint8_t commParam;       // 通信参数
-} OD_extension_t;
-
-#endif /* OD_EXTENSION_DEFINED */
 
 #ifndef CO_OD_INTERFACE_H
 #define CO_OD_INTERFACE_H
 
 #include "301/CO_driver.h"
-typedef struct {
-    uint8_t* flagsPDO;   // PDO传输标志位数组
-    /* 根据您的EDS文件添加其他必要字段 */
-    uint8_t* mapping;    // PDO映射指针
-    uint16_t mappingSize;// 映射大小
-} OD_extension_t;
 
 #ifdef __cplusplus
 extern "C" {
