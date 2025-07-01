@@ -42,8 +42,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../CANopenNode/305/CO_LSS.h ../CANopenNode/305/CO_LSSmaster.h \
  ../CANopenNode/309/CO_gateway_ascii.h ../CANopenNode/301/CO_SDOclient.h \
  ../CANopenNode/305/CO_LSSmaster.h ../CANopenNode/303/CO_LEDs.h \
- ../CANopenNode/extra/CO_trace.h ../Core/Inc/globals.h \
- ../CANopenNode/objectDictionary.h ../CANopenNode/301/CO_driver.h \
+ ../CANopenNode/extra/CO_trace.h ../CANopenNode/301/CO_driver.h \
  ../CANopenNode/301/CO_ODinterface.h ../CANopenNode/301/CO_Emergency.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -108,8 +107,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../CANopenNode/305/CO_LSSmaster.h:
 ../CANopenNode/303/CO_LEDs.h:
 ../CANopenNode/extra/CO_trace.h:
-../Core/Inc/globals.h:
-../CANopenNode/objectDictionary.h:
 ../CANopenNode/301/CO_driver.h:
 ../CANopenNode/301/CO_ODinterface.h:
 ../CANopenNode/301/CO_Emergency.h:

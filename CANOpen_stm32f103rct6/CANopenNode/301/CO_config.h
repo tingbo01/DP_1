@@ -20,7 +20,6 @@
 
 #ifndef CO_CONFIG_FLAGS_H
 #define CO_CONFIG_FLAGS_H
-#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -791,44 +790,3 @@ extern "C" {
 #endif /* __cplusplus */
 
 #endif /* CO_CONFIG_FLAGS_H */
-
-// 定义扩展结构体
-//typedef struct {
-//    uint8_t flagsPDO[8]; // 实际大小取决于OD_FLAGS_PDO_SIZE
-//} OD_extension_t;
-
-
-/* 对象字典条目类型定义 */
-//typedef struct {
-//    uint16_t    index;
-//    uint8_t     subIndex;
-//    uint8_t     accessType;  // OD_accessReadWrite等
-//    uint8_t     dataType;    // OD_TYPE_UNSIGNED16等
-//    uint32_t    defaultValue;
-//} OD_entry_t;
-typedef struct {
-    uint16_t index;
-    uint8_t subIndex;
-    uint8_t attr;
-    void *pData;
-    uint8_t dataLength;
-    void *extension;  // 添加extension成员
-} OD_entry_t;
-/* 访问权限枚举 */
-typedef enum {
-    OD_accessReadOnly = 0x01,
-    OD_accessWriteOnly = 0x02,
-    OD_accessReadWrite = 0x03
-} OD_access_t;
-
-/* 数据类型枚举 */
-typedef enum {
-    OD_TYPE_UNSIGNED16 = 0x06,  // 2字节无符号整数
-    OD_TYPE_INTEGER8   = 0x02,   // 1字节有符号整数
-    OD_TYPE_INTEGER32  = 0x08,   // 4字节有符号整数
-    // 添加其他需要的数据类型...
-} OD_data_type_t;
-
-/* 对象字典宏 */
-#define OD_ENTRY(index, subIndex, access, type, defaultValue) \
-    {index, subIndex, access, type, defaultValue}
